@@ -5,7 +5,57 @@
   <meta charset="UTF-8">
   <title>About Us - ListMyCaravan</title>
   <link rel="stylesheet" type="text/css" href="resources/styles.css">
+  <style>
+    .content-with-image {
+      padding-top: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+      margin: 0 auto;
+    }
+
+    .text-content,
+    .image-container {
+      flex: 1;
+      width: 423px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    .content-with-image .text-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .content-with-image .text-content::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -50px;
+      width: 600px;
+      height: 500px;
+      background-color: #E9E3E3;
+      z-index: -1;
+      transform: translateY(-50%);
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    main,
+    footer {
+      text-align: center;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+  </style>
 </head>
+
 
 <body>
   <header>
@@ -41,13 +91,48 @@
         </div>
       </div>
     </div>
+    <div class="user-login-button">
+      <a href="login.html">
+        <img src="resources/circle-user-round.svg" alt="User Login">
+      </a>
+    </div>
+
   </header>
 
+
   <main>
+    <div class="text-content website-text">
+      <h1>Lore Ipsum</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate</p>
+    </div>
+
+
+    <div class="content-with-image">
+      <div class="text-content website-text">
+        <h2>Lore Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eaLorem
+          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eaLorem
+          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eaLorem
+          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
+      </div>
+      <div class="image-container">
+        <img src="resources/aboutUsCaravan.png" alt="Shapes">
+      </div>
+    </div>
+
   </main>
 
+
   <footer>
+    <!-- footer content -->
   </footer>
+
 
   <script>
     //Add your scripts here

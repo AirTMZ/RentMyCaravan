@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 200px;
 }
 
 .navigation-bar {
@@ -17,7 +17,6 @@
 body {
   background-color: #FFFAFA;
 }
-
 
 .nav-background {
   width: 600px;
@@ -88,4 +87,30 @@ body {
   font-size: 30px;
   font-weight: bold;
   font-family: Ubuntu;
+}
+
+.website-text p {
+  font-family: 'Ubuntu-regular', sans-serif;
+}
+
+.website-text h1,
+.website-text h2,
+.website-text h3,
+.website-text h4,
+.website-text h5,
+.website-text h6 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+}
+
+.user-login-button {
+  position: fixed;
+  right: 5%;
+  position: absolute;
+  top: 1%;
+}
+
+.user-login-button img {
+  display: block;
+  cursor: pointer;
 }
