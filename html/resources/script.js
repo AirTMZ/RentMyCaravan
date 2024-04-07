@@ -1,20 +1,21 @@
+// Store the dark style element in a variable for reuse
+var darkStyle = document.getElementById('darkStyle');
+
 // Check for saved dark mode setting in localStorage
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function() {
   var darkMode = localStorage.getItem('darkMode');
   if (darkMode === 'enabled') {
     enableDarkMode();
   }
-};
+});
 
 // Function to enable dark mode
 function enableDarkMode() {
-  var darkStyle = document.getElementById('darkStyle');
   darkStyle.disabled = false;
 }
 
 // Function to disable dark mode
 function disableDarkMode() {
-  var darkStyle = document.getElementById('darkStyle');
   darkStyle.disabled = true;
 }
 
