@@ -115,3 +115,7 @@ body {
   display: block;
   cursor: pointer;
 }
+
+footer {
+  padding-top: 3%;
+}
