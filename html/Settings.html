@@ -4,11 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Settings - ListMyCaravan</title>
-  <link rel="stylesheet" type="text/css" href="resources/styles.css">
+  <link rel="stylesheet" href="resources/styles.css" id="defaultStyle">
+  <link rel="stylesheet" href="resources/darkStyles.css" id="darkStyle" disabled>
 </head>
 
 <body>
   <header>
+    <div class="moon">
+      <img src="resources/moon.svg" alt="Toggle Dark Mode" id="imageButton" style="cursor: pointer;">
+    </div>
     <div class="container">
       <div class="navigation-bar">
         <div class="website-name">ListMyCaravan</div>
@@ -56,8 +60,8 @@
     <p>&copy; ListMyCaravan 2024 - All rights reserved</p>
   </footer>
 
-  <script>
-    //Add your scripts here
+  <script src="resources/script.js">
+    //Add Script
   </script>
 </body>
 
