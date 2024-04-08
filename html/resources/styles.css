@@ -14,9 +14,26 @@
   transform: translateX(-50%);
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
   background-color: #FFFAFA;
 }
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
 
 .nav-background {
   width: 600px;
@@ -130,6 +147,8 @@ body {
 
 footer {
   padding-top: 3%;
+  position: relative;
+  bottom: 1%;
 }
 
 .content-with-image {
@@ -195,4 +214,42 @@ iframe {
   border-radius: 28px;
   margin: auto;
   display: block;
+}
+
+.profileBox {
+  background-color: #FFFFFF;
+  border-radius: 28px;
+  box-shadow: 0 4px 4px rgba(18, 13, 13, 0.25);
+  padding: 20px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-size: cover;
+  margin-bottom: 50px;
+}
+
+.text-box {
+  background-color: #FFFAFA;
+  box-shadow: 0 4px 4px rgba(18, 13, 13, 0.25);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  width: 90%;
+  height: 40px;
+  font-size: 16px;
+  font-family: Ubuntu;
+  font-weight: 500;
+  color: #556462;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
