@@ -108,9 +108,6 @@ main {
   font-size: 30px;
   font-weight: bold;
   font-family: Ubuntu;
-}
-
-.website-name a {
   color: inherit;
   text-decoration: none;
 }
