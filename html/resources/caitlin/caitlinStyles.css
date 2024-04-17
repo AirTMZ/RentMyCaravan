@@ -1,0 +1,75 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #fffafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+
+  .container {
+    background-color: #FFFFFF;
+    padding: 30px;
+    width: 20%;
+    height: 50%;
+    border-radius: 28px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    text-align: center;
+  }
+
+
+  h1 {
+    color: #000000;
+    margin-bottom: 30px;
+  }
+  .sign-in-text{
+    font-weight:550;
+  }
+  .register-text {
+    font-weight: bold;
+    font-size: small;
+  }
+ 
+
+
+  input[type="email"],
+  input[type="password"] {
+    display: block;
+    width: 90%;
+    height: 35px;
+    background-color: #fffafa;
+    padding: 10px;
+    color: #556462;
+    margin-bottom: 20px;
+    justify-content: center;
+    border: none;
+    font-weight: bold;
+    border-radius: 28px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    padding-left: 15px;
+  }
+
+
+  button[type="submit"] {
+    background-color: #0fff95;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 28px;
+    cursor: pointer;
+    justify-content: center;
+    font-size: large;
+    font-weight: bold;
+    width: 90%;
+    height: 50px;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.25);
+  }
+
+
+  footer {
+    padding-top: 3%;
+    text-align: center;
+  }
