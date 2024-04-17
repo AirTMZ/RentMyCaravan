@@ -27,3 +27,26 @@ footer {
 }
 
 /*DO NOT REMOVE*/
+
+
+.container-login {
+  background-color: #252525;
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  color: #DDDDDD;
+}
+
+input[type="email"],
+input[type="password"] {
+  background-color: #252525;
+  color: #DDDDDD;
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+button[type="submit"] {
+  background-color: #0fff97c7;
+  color: #FFFFFF;
+  box-shadow: inset 4px 4px 10px rgba(255, 255, 255, 0.1);
+}
