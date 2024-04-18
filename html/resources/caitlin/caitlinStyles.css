@@ -38,16 +38,29 @@ h1 {
 }
 
 
+.password-group input:last-child {
+  margin-left: 3%;
+}
+
+.name-group input:last-child {
+  margin-left: 3%;
+}
+
+.name-group,
+.password-group {
+  width: calc(100% - 3%);
+}
+
 
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="text"] {
   display: block;
   width: 400px;
   height: 50px;
   background-color: #fffafa;
   padding: 10px;
   color: #556462;
-  margin-bottom: 20px;
   justify-content: center;
   border: none;
   font-weight: bold;
@@ -56,7 +69,6 @@ input[type="password"] {
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
   padding-left: 25px;
 }
-
 
 button[type="submit"] {
   background-color: #0fff95;
@@ -71,10 +83,26 @@ button[type="submit"] {
   width: 100%;
   height: 65px;
   box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
 }
 
 
 footer {
   padding-top: 3%;
   text-align: center;
+}
+
+.name-group,
+.password-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name-group input,
+.password-group input {
+  width: calc(50% - 10px);
+}
+
+.form-group {
+  margin-bottom: 20px;
 }
