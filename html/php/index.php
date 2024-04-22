@@ -1,29 +1,24 @@
 <?php
-$servername = "127.0.0.1";
-$username = "root";
-$password = "webdesign";
-$dbname = "rentmycar";
+session_start();
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$host = 'localhost';
+$dbname = 'rentmycar';
+$username = 'root';
+$password = '';
 
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $stmt = $conn->prepare("SELECT * FROM vehicle_details ORDER BY vehicle_id DESC LIMIT 4");
+    $stmt->execute();
+    $caravans = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    echo json_encode($caravans);
+
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
 }
 
-$sql = "SELECT * FROM vehicle_details";
-$result = $conn->query($sql);
-
-$vehicles = array();
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    $vehicles[] = $row;
-  }
-  echo json_encode($vehicles);
-} else {
-  echo "0 results";
-}
-$conn->close();
+$conn = null;
 ?>

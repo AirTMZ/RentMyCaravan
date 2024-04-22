@@ -6,6 +6,15 @@
   <title>Login - RentMyCaravan</title>
   <link rel="stylesheet" href="resources/caitlin/caitlinStyles.css" id="caitlinStyle">
   <link rel="stylesheet" href="resources/caitlin/darkStyles.css" id="darkStyle" disabled>
+
+  <script>
+    // Check if user data exists in local storage
+    if (localStorage.getItem('first_name') && localStorage.getItem('email') && localStorage.getItem('password')) {
+      // Redirect to profile.html if user data is found
+      window.location.href = 'profile.html';
+    }
+
+  </script>
 </head>
 
 <body>
