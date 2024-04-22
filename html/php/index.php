@@ -1,7 +1,7 @@
 <?php
 $servername = "127.0.0.1";
-$username = "your_username";
-$password = "your_password";
+$username = "root";
+$password = "webdesign";
 $dbname = "rentmycar";
 
 // Create connection
