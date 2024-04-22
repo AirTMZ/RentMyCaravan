@@ -27,12 +27,13 @@ try {
         $stmt->bindParam(':postcode', $_POST['postCode']);
         $stmt->bindParam(':email', $_POST['email']);
         $stmt->bindParam(':telephone', $telephone, PDO::PARAM_NULL); // Set to NULL if not provided
-        
 
         // Execute the statement
         $stmt->execute();
 
-        echo "New record created successfully";
+        // Redirect to the sign-in page after successful registration
+        header('Location: Login.html');
+        exit;
     }
 } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
