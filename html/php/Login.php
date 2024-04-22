@@ -21,15 +21,17 @@ try {
         if ($stmt->rowCount() == 1) {
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
            if ($password === $user['PASSWORD']) {
-    echo "<script>
-            localStorage.setItem('first_name', '" . $user['first_name'] . "');
-            localStorage.setItem('last_name', '" . $user['last_name'] . "');
-            localStorage.setItem('email', '" . $user['email'] . "');
-            localStorage.setItem('postcode', '" . $user['postcode'] . "');
-            localStorage.setItem('password', '" . $user['PASSWORD'] . "');
-                        localStorage.setItem('telephone', '" . $user['telephone'] . "');
-          </script>";
-                  header('Location: ../profile.html');
+echo "<script>
+        localStorage.setItem('first_name', '" . $user['first_name'] . "');
+        localStorage.setItem('last_name', '" . $user['last_name'] . "');
+        localStorage.setItem('email', '" . $user['email'] . "');
+        localStorage.setItem('postcode', '" . $user['postcode'] . "');
+        localStorage.setItem('password', '" . $user['PASSWORD'] . "');
+        localStorage.setItem('telephone', '" . $user['telephone'] . "');
+        localStorage.setItem('profile_url', '" . $user['profile_url'] . "'); // Add this line
+        window.location.href = '../profile.html';
+      </script>";
+
     exit;
 }else {
                 echo "The password you entered was not valid.";

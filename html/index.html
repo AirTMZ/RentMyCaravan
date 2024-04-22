@@ -70,79 +70,7 @@
     </div>
 
     <div class="card-container">
-      <!-- Card 1 -->
-      <div class="card-card">
-        <div class="card-top-bar">
-          <img src="resources/caitlin/profile.png" class="profile-picture" alt="Profile Picture" />
-          <div class="make-model-location">
-            <p class="make-model">Make Model</p>
-            <p class="location">Location</p>
-          </div>
-          <img src="resources/caitlin/heart.svg" class="heart-icon" alt="Heart Icon" />
-        </div>
-        <img src="resources/caitlin/default.png" class="card-image" alt="Caravan Image" />
-        <div class="card-details">
-          <p class="price">Price</p>
-          <p class="seller-name">Seller Name</p>
-          <p class="car-details">Year | Body Type | Fuel Type | Mileage | Door Num</p>
-        </div>
-        <button class="card-button">Price</button>
-      </div>
-      <!-- Card 2 -->
-      <div class="card-card">
-        <div class="card-top-bar">
-          <img src="resources/caitlin/profile.png" class="profile-picture" alt="Profile Picture" />
-          <div class="make-model-location">
-            <p class="make-model">Make Model</p>
-            <p class="location">Location</p>
-          </div>
-          <img src="resources/caitlin/heart.svg" class="heart-icon" alt="Heart Icon" />
-        </div>
-        <img src="resources/caitlin/default.png" class="card-image" alt="Caravan Image" />
-        <div class="card-details">
-          <p class="price">Price</p>
-          <p class="seller-name">Seller Name</p>
-          <p class="car-details">Year | Body Type | Fuel Type | Mileage | Door Num</p>
-        </div>
-        <button class="card-button">Price</button>
-      </div>
-      <!-- Card 3 -->
-      <div class="card-card">
-        <div class="card-top-bar">
-          <img src="resources/caitlin/profile.png" class="profile-picture" alt="Profile Picture" />
-          <div class="make-model-location">
-            <p class="make-model">Make Model</p>
-            <p class="location">Location</p>
-          </div>
-          <img src="resources/caitlin/heart.svg" class="heart-icon" alt="Heart Icon" />
-        </div>
-        <img src="resources/caitlin/default.png" class="card-image" alt="Caravan Image" />
-        <div class="card-details">
-          <p class="price">Price</p>
-          <p class="seller-name">Seller Name</p>
-          <p class="car-details">Year | Body Type | Fuel Type | Mileage | Door Num</p>
-        </div>
-        <button class="card-button">Price</button>
-      </div>
-      <!-- Card 4 -->
-      <div class="card-card">
-        <div class="card-top-bar">
-          <img src="resources/caitlin/profile.png" class="profile-picture" alt="Profile Picture" />
-          <div class="make-model-location">
-            <p class="make-model">Make Model</p>
-            <p class="location">Location</p>
-          </div>
-          <img src="resources/caitlin/heart.svg" class="heart-icon" alt="Heart Icon" />
-        </div>
-        <img src="resources/caitlin/default.png" class="card-image" alt="Caravan Image" />
-        <div class="card-details">
-          <p class="price">Price</p>
-          <p class="seller-name">Seller Name</p>
-          <p class="car-details">Year | Body Type | Fuel Type | Mileage | Door Num</p>
-        </div>
-        <button class="card-button">Price</button>
-      </div>
-
+      <!-- Caravan cards will be added here -->
 
     </div>
   </main>
@@ -153,6 +81,77 @@
 
   <script src="resources/default/script.js">
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('php/index.php')
+        .then(response => response.json())
+        .then(data => {
+          const cardContainer = document.querySelector('.card-container');
+          // Check if data is returned from the PHP script
+          if (data && data.length > 0) {
+            // Use the data to populate the caravan cards
+            data.forEach(caravan => {
+              const card = document.createElement('div');
+              card.className = 'card-card';
+              card.innerHTML = `
+            <div class="card-top-bar">
+              <img src="resources/caitlin/profile.png" class="profile-picture" alt="Profile Picture" />
+              <div class="make-model-location">
+                <p class="make-model">${caravan.vehicle_make} ${caravan.vehicle_model}</p>
+                <p class="location">${caravan.location}</p>
+              </div>
+            </div>
+            <img src="${caravan.image_url}" class="card-image" alt="Caravan Image" />
+            <div class="card-details">
+              <p class="car-details">${caravan.vehicle_bodytype} | ${caravan.fuel_type} | ${caravan.mileage} km | ${caravan.num_doors} doors</p>
+            </div>
+            <div class="card-button">${caravan.year}</div>
+          `;
+              cardContainer.appendChild(card);
+            });
+          }
+          /*
+            for (let i = 0; i < 4; i++) {
+              const card = document.createElement('div');
+              card.className = 'card-card';
+              card.innerHTML = `
+            <div class="card-top-bar">
+              <img src="resources/caitlin/profile.png" class="profile-picture" alt="Profile Picture" />
+              <div class="make-model-location">
+                <p class="make-model">Make Model</p>
+                <p class="location">Location</p>
+              </div>
+              <img src="resources/caitlin/heart.svg" class="heart-icon" alt="Heart Icon" />
+            </div>
+            <img src="resources/caitlin/default.png" class="card-image" alt="Caravan Image" />
+            <div class="card-details">
+              <p class="car-details">Body Type | Fuel Type | Mileage | Door Num</p>
+            </div>
+            <div class="card-button">Year</div>
+          `;
+              cardContainer.appendChild(card);
+            }
+            INSERT INTO vehicle_details (user_id, vehicle_make, vehicle_model, vehicle_bodytype, fuel_type, mileage, location, year, num_doors, image_url)
+VALUES (1, 'Ford', 'Fiesta', 'SUV', 'Diesel', '56051', 'Vancouver', '1999', 5, 'resources/caitlin/caravan.jpeg');
+
+INSERT INTO vehicle_details (user_id, vehicle_make, vehicle_model, vehicle_bodytype, fuel_type, mileage, location, year, num_doors, image_url)
+VALUES (1, 'Honda', 'Civic', 'Coupe', 'Electric', '120000', 'Toronto', '2010', 2, 'resources/caitlin/caravan.jpeg');
+
+INSERT INTO vehicle_details (user_id, vehicle_make, vehicle_model, vehicle_bodytype, fuel_type, mileage, location, year, num_doors, image_url)
+VALUES (1, 'Chevrolet', 'Impala', 'Convertible', 'Petrol', '85000', 'Montreal', '2015', 2, 'resources/caitlin/caravan.jpeg');
+
+INSERT INTO vehicle_details (user_id, vehicle_make, vehicle_model, vehicle_bodytype, fuel_type, mileage, location, year, num_doors, image_url)
+VALUES (1, 'Toyota', 'Corolla', 'Hatchback', 'Hybrid', '65000', 'Calgary', '2018', 4, 'resources/caitlin/caravan.jpeg');
+
+            */
+        })
+        .catch(error => {
+          console.error('Error fetching caravan data:', error);
+        });
+    });
+
+  </script>
+
 </body>
 
 </html>
