@@ -3,9 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
+
   <title>Sign Up - RentMyCaravan</title>
   <link rel="stylesheet" href="resources/caitlin/caitlinStyles.css" id="caitlinStyle">
   <link rel="stylesheet" href="resources/caitlin/darkStyles.css" id="darkStyle" disabled>
+
 
   <style>
     .container-login {
@@ -24,13 +26,14 @@
 </head>
 
 <body>
+  
   <main class="container-login">
     <a href="index.html" style="text-decoration: none; color: #0fff95; font-size: 22px;">
       <h1>ListMyCaravan</h1>
     </a>
     <p class="sign-in-text">Sign up to continue</p>
 
-    <form action="/register" method="post">
+    <form action="php/SignUp.php" method="post">
       <div class="form-group name-group">
         <input type="text" id="FirstName" name="firstName" placeholder="First Name" required>
         <input type="text" id="LastName" name="lastName" placeholder="Last Name" required>
@@ -62,7 +65,23 @@
     <p>&copy; RentMyCaravan 2024 - All rights reserved</p>
   </footer>
 
-  <script src="resources/default/script.js"></script>
+  <script src="resources/default/script.js">
+    // script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    form.onsubmit = function(event) {
+        // Prevent form submission if passwords do not match
+        const password = document.getElementById('Password').value;
+        const repeatPassword = document.getElementById('RepeatPassword').value;
+        if (password !== repeatPassword) {
+            alert('Passwords do not match!');
+            event.preventDefault();
+        }
+    };
+});
+
+  </script>
 </body>
 
 </html>
