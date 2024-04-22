@@ -54,19 +54,27 @@
   <main>
     <div class="profileBox">
       <img src="resources/tim/defaultProfile.png" alt="Profile Picture" class="profile-pic">
-      <div class="text-box">First Name Last Name</div>
-      <div class="text-box">Email</div>
-      <div class="text-box">Phone Number</div>
+      <div class="text-box" id="firstNameLastName">First Name Last Name</div>
+      <div class="text-box" id="email">Email</div>
+      <div class="text-box" id="postCode">Post Code</div>
     </div>
+  </main>
 
 
-    <footer class="website-text">
-      <p>&copy; RentMyCaravan 2024 - All rights reserved</p>
-    </footer>
+  <footer class="website-text">
+    <p>&copy; RentMyCaravan 2024 - All rights reserved</p>
+  </footer>
 
-    <script src="resources/default/script.js">
-      //Add Script
-    </script>
+  <script src="resources/default/script.js">
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Retrieve data from local storage and display it
+      document.getElementById('firstNameLastName').textContent = localStorage.getItem('first_name') + ' ' + localStorage.getItem('last_name');
+      document.getElementById('email').textContent = localStorage.getItem('email');
+      document.getElementById('postCode').textContent = localStorage.getItem('postcode');
+    });
+  </script>
 </body>
 
 </html>
