@@ -1,0 +1,84 @@
+.settings-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .settings-container h2 {
+    margin-bottom: 20px;
+  }
+
+  .settings-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+
+  .settings-form label {
+    font-weight: bold;
+  }
+
+  .settings-form input[type="text"],
+  .settings-form input[type="email"],
+  .settings-form input[type="tel"],
+  .settings-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .delete-account-button {
+    background-color: #FF4136;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+
+
+  .vertical-carousel {
+    overflow: auto;
+    height: 400px;
+    width: 100%; 
+  }
+
+  .carousel-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+  }
+
+  .carousel-item {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+
+
+  .box {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .box {
+    display: flex;
+    height: 250px;
+  }
+
+  .box-image {
+    margin-right: 20px; 
+    width: auto; 
+    height: 250px; 
+  }
+
+  .box-content {
+    flex: 1; 
+  }
