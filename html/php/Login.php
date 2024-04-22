@@ -27,7 +27,6 @@ echo "<script>
         localStorage.setItem('email', '" . $user['email'] . "');
         localStorage.setItem('postcode', '" . $user['postcode'] . "');
         localStorage.setItem('password', '" . $user['PASSWORD'] . "');
-        localStorage.setItem('telephone', '" . $user['telephone'] . "');
         localStorage.setItem('profile_url', '" . $user['profile_url'] . "'); // Add this line
         window.location.href = '../profile.html';
       </script>";
