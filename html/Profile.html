@@ -69,12 +69,27 @@
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Retrieve data from local storage and display it
-      document.getElementById('firstNameLastName').textContent = localStorage.getItem('first_name') + ' ' + localStorage.getItem('last_name');
-      document.getElementById('email').textContent = localStorage.getItem('email');
-      document.getElementById('postCode').textContent = localStorage.getItem('postcode');
+      // Function to capitalise the first letter of a string
+      function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+      }
+
+      var firstName = localStorage.getItem('first_name');
+      var lastName = localStorage.getItem('last_name');
+      var email = localStorage.getItem('email');
+      var postCode = localStorage.getItem('postcode');
+
+      // Capitalise the first letter of first and last names and make postcode uppercase
+      firstName = capitalizeFirstLetter(firstName);
+      lastName = capitalizeFirstLetter(lastName);
+      postCode = postCode.toUpperCase();
+
+      document.getElementById('firstNameLastName').textContent = firstName + ' ' + lastName;
+      document.getElementById('email').textContent = email;
+      document.getElementById('postCode').textContent = postCode;
     });
   </script>
+
 </body>
 
 </html>

@@ -28,8 +28,8 @@ try {
             localStorage.setItem('postcode', '" . $user['postcode'] . "');
             localStorage.setItem('password', '" . $user['PASSWORD'] . "');
                         localStorage.setItem('telephone', '" . $user['telephone'] . "');
-            window.location.href = '../profile.html';
           </script>";
+                  header('Location: ../profile.html');
     exit;
 }else {
                 echo "The password you entered was not valid.";
