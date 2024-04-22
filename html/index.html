@@ -7,6 +7,167 @@
   <link rel="stylesheet" href="resources/default/styles.css" id="defaultStyle">
   <link rel="stylesheet" href="resources/caitlin/caitlinStyles.css" id="caitlinStyle">
   <link rel="stylesheet" href="resources/caitlin/darkStyles.css" id="darkStyle" disabled>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    main,
+    footer {
+      max-width: 100%;
+    }
+
+    .welcome-image {
+      width: 80%;
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 12%;
+      margin-bottom: 1%;
+      display: block;
+    }
+
+    .welcome-image img {
+      width: 100%;
+      height: auto;
+    }
+
+
+    .card-container {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+      margin: auto;
+      gap: 20px;
+    }
+
+    .card-card {
+      background-color: #E9E3E3;
+      border-radius: 12px;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+      padding: 10px;
+      position: relative;
+      width: 20%;
+      margin: 0 10px;
+    }
+
+
+    .card-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3%;
+    }
+
+
+    .profile-picture {
+      width: 10%;
+      height: 10%;
+      border-radius: 50%;
+      margin-right: 3%;
+    }
+
+    .make-model-location {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+    }
+
+    .make-model {
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+
+    .make-model-location p {
+      margin: 0;
+      padding: 1%;
+    }
+
+    .card-details p {
+      margin: 1% 0;
+    }
+
+
+    .location {
+      font-weight: normal;
+    }
+
+    .card-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      padding-top: 3%;
+      padding-bottom: 3%;
+    }
+
+
+    .card-details {
+      text-align: left;
+      padding-left: 10%;
+      padding-right: 25%;
+      padding-bottom: 20%;
+      font-size: larger;
+    }
+
+    .card-button {
+      background-color: #0FFF95;
+      color: white;
+      box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.25);
+      border: none;
+      border-radius: 30px;
+      padding: 10px;
+      width: 25%;
+      height: auto;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+
+    .heart-icon {
+      width: 10%;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .make-model {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+    }
+
+    .location,
+    .seller-name {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 400;
+    }
+
+    .price {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 500;
+    }
+
+    .car-details {
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 300;
+    }
+
+    .see-more-container {
+      text-align: right;
+      padding-right: 5%;
+      margin-bottom: 1%;
+    }
+
+    .see-more-link {
+      display: inline-block;
+      padding: 5px 5px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+  </style>
+
+
 </head>
 
 <body>
@@ -48,14 +209,97 @@
         <img src="resources/default/circle-user-round.svg" alt="User Login">
       </a>
     </div>
-
   </header>
 
   <main>
+    <div class="welcome-image">
+      <img src="resources/caitlin/welcomeBar.png">
+    </div>
+
+    <div class="see-more-container">
+      <a href="CaravanList.html" class="see-more-link">See more</a>
+    </div>
+
+    <div class="card-container">
+      <!-- Card 1 -->
+      <div class="card-card">
+        <div class="card-top-bar">
+          <img src="resources/caitlin/profile.png" class="profile-picture" alt="Profile Picture" />
+          <div class="make-model-location">
+            <p class="make-model">Make Model</p>
+            <p class="location">Location</p>
+          </div>
+          <img src="resources/caitlin/heart.svg" class="heart-icon" alt="Heart Icon" />
+        </div>
+        <img src="resources/caitlin/default.png" class="card-image" alt="Caravan Image" />
+        <div class="card-details">
+          <p class="price">Price</p>
+          <p class="seller-name">Seller Name</p>
+          <p class="car-details">Year | Body Type | Fuel Type | Mileage | Door Num</p>
+        </div>
+        <button class="card-button">Price</button>
+      </div>
+      <!-- Card 2 -->
+      <div class="card-card">
+        <div class="card-top-bar">
+          <img src="resources/caitlin/profile.png" class="profile-picture" alt="Profile Picture" />
+          <div class="make-model-location">
+            <p class="make-model">Make Model</p>
+            <p class="location">Location</p>
+          </div>
+          <img src="resources/caitlin/heart.svg" class="heart-icon" alt="Heart Icon" />
+        </div>
+        <img src="resources/caitlin/default.png" class="card-image" alt="Caravan Image" />
+        <div class="card-details">
+          <p class="price">Price</p>
+          <p class="seller-name">Seller Name</p>
+          <p class="car-details">Year | Body Type | Fuel Type | Mileage | Door Num</p>
+        </div>
+        <button class="card-button">Price</button>
+      </div>
+      <!-- Card 3 -->
+      <div class="card-card">
+        <div class="card-top-bar">
+          <img src="resources/caitlin/profile.png" class="profile-picture" alt="Profile Picture" />
+          <div class="make-model-location">
+            <p class="make-model">Make Model</p>
+            <p class="location">Location</p>
+          </div>
+          <img src="resources/caitlin/heart.svg" class="heart-icon" alt="Heart Icon" />
+        </div>
+        <img src="resources/caitlin/default.png" class="card-image" alt="Caravan Image" />
+        <div class="card-details">
+          <p class="price">Price</p>
+          <p class="seller-name">Seller Name</p>
+          <p class="car-details">Year | Body Type | Fuel Type | Mileage | Door Num</p>
+        </div>
+        <button class="card-button">Price</button>
+      </div>
+      <!-- Card 4 -->
+      <div class="card-card">
+        <div class="card-top-bar">
+          <img src="resources/caitlin/profile.png" class="profile-picture" alt="Profile Picture" />
+          <div class="make-model-location">
+            <p class="make-model">Make Model</p>
+            <p class="location">Location</p>
+          </div>
+          <img src="resources/caitlin/heart.svg" class="heart-icon" alt="Heart Icon" />
+        </div>
+        <img src="resources/caitlin/default.png" class="card-image" alt="Caravan Image" />
+        <div class="card-details">
+          <p class="price">Price</p>
+          <p class="seller-name">Seller Name</p>
+          <p class="car-details">Year | Body Type | Fuel Type | Mileage | Door Num</p>
+        </div>
+        <button class="card-button">Price</button>
+      </div>
+
+
+    </div>
   </main>
 
   <footer class="website-text">
-    <p>&copy; RentMyCaravan 2024 - All rights reserved</p>
+    <p>© RentMyCaravan 2024 - All rights reserved</p>
   </footer>
 
   <script src="resources/default/script.js">
