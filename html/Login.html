@@ -20,6 +20,10 @@
       <div class="form-group">
         <input type="email" id="Email" name="email" placeholder="Email" required>
       </div>
+<!-- Add the action attribute to point to your PHP script -->
+<form action="login.php" method="post">
+  <!-- Rest of your form -->
+</form>
 
 
       <div class="form-group">
@@ -46,7 +50,14 @@
     <p>&copy; RentMyCaravan 2024 - All rights reserved</p>
   </footer>
 
-  <script src="resources/default/script.js">
+  <script src="resources/default/script.js"> // Add this code to your existing script.js file
+    document.addEventListener('DOMContentLoaded', function() {
+        const loginForm = document.querySelector('form');
+        loginForm.onsubmit = function(event) {
+            // Basic validation can be done here or more advanced validation as needed
+        };
+    });
+    
   </script>
 </body>
 
