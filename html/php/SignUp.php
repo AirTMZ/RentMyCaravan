@@ -1,9 +1,9 @@
 <?php
 // Database configuration
-$host = '127.0.0.1:3308';
+$host = 'localhost';
 $dbname = 'rentmycar';
 $username = 'root'; // Replace with your database username
-$password = 'webdesign'; // Replace with your database password
+$password = '';  // Replace with your database password
 
 // Create a new PDO instance
 try {
@@ -13,26 +13,32 @@ try {
 
     // Insert new user into the database
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Set default values for unspecified fields
+        $defaultTitle = 'Mr';
+        $defaultGender = 'Male';
+        $defaultAddress = 'N/A';
+        $defaultTelephone = '0000000000';
+
         // Prepare SQL statement
         $stmt = $conn->prepare("INSERT INTO users (username, PASSWORD, title, first_name, last_name, gender, adress1, postcode, email, telephone) VALUES (:username, :password, :title, :first_name, :last_name, :gender, :adress1, :postcode, :email, :telephone)");
 
         // Bind parameters
         $stmt->bindParam(':username', $_POST['email']); // Using email as username for simplicity
-        $stmt->bindParam(':password', password_hash($_POST['password'], PASSWORD_DEFAULT)); // Hash the password
-        $stmt->bindParam(':title', $title, PDO::PARAM_NULL); // Set to NULL if not provided
+        $stmt->bindParam(':password', $_POST['password']);
+        $stmt->bindParam(':title', $defaultTitle); // Bind the default value
         $stmt->bindParam(':first_name', $_POST['firstName']);
         $stmt->bindParam(':last_name', $_POST['lastName']);
-        $stmt->bindParam(':gender', $gender, PDO::PARAM_NULL); // Set to NULL if not provided
-        $stmt->bindParam(':adress1', $adress1, PDO::PARAM_NULL); // Set to NULL if not provided
+        $stmt->bindParam(':gender', $defaultGender); // Bind the default value
+        $stmt->bindParam(':adress1', $defaultAddress); // Bind the default value
         $stmt->bindParam(':postcode', $_POST['postCode']);
         $stmt->bindParam(':email', $_POST['email']);
-        $stmt->bindParam(':telephone', $telephone, PDO::PARAM_NULL); // Set to NULL if not provided
+        $stmt->bindParam(':telephone', $defaultTelephone); // Bind the default value
 
         // Execute the statement
         $stmt->execute();
 
-        // Redirect to the sign-in page after successful registration
-        header('Location: Login.html');
+        // Redirect to the profile page after successful registration
+        header('Location: ../profile.html');
         exit;
     }
 } catch(PDOException $e) {

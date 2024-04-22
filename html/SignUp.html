@@ -25,7 +25,7 @@
 </head>
 
 <body>
-  
+
   <main class="container-login">
     <a href="index.html" style="text-decoration: none; color: #0fff95; font-size: 22px;">
       <h1>ListMyCaravan</h1>
@@ -43,8 +43,9 @@
       </div>
 
       <div class="form-group">
-        <input type="text" class="postCode" placeholder="Post Code" required>
+        <input type="text" name="postCode" class="postCode" placeholder="Post Code" required>
       </div>
+
 
       <div class="form-group password-group">
         <input type="password" id="Password" name="password" placeholder="Password" required>
@@ -64,22 +65,22 @@
     <p>&copy; RentMyCaravan 2024 - All rights reserved</p>
   </footer>
 
-  <script src="resources/default/script.js">
+  <script src="resources/default/script.js"></script>
+  <script>
     // script.js
 
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
-    form.onsubmit = function(event) {
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('form');
+      form.onsubmit = function (event) {
         // Prevent form submission if passwords do not match
         const password = document.getElementById('Password').value;
         const repeatPassword = document.getElementById('RepeatPassword').value;
         if (password !== repeatPassword) {
-            alert('Passwords do not match!');
-            event.preventDefault();
+          alert('Passwords do not match!');
+          event.preventDefault();
         }
-    };
-});
-
+      };
+    });
   </script>
 </body>
 
