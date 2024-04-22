@@ -15,50 +15,28 @@
     </a>
     <p class="sign-in-text">Sign in to continue</p>
 
-
-    <form action="/login" method="post">
+    <!-- Corrected form with proper action attribute -->
+    <form action="php/Login.php" method="post">
       <div class="form-group">
         <input type="email" id="Email" name="email" placeholder="Email" required>
       </div>
-<!-- Add the action attribute to point to your PHP script -->
-<form action="login.php" method="post">
-  <!-- Rest of your form -->
-</form>
-
-
       <div class="form-group">
         <input type="password" id="Password" name="password" placeholder="Password" required>
       </div>
-
-
       <div class="form-group">
         <button type="submit">Login</button>
       </div>
     </form>
 
-
     <p class="register-text">Don't have an account yet? <a href="SignUp.html"
         style="text-decoration: none; color: #1be18b;">Sign Up</a></p>
-
-
-  </main>
-
-  <main>
   </main>
 
   <footer class="website-text">
-    <p>&copy; RentMyCaravan 2024 - All rights reserved</p>
+    <p>© RentMyCaravan 2024 - All rights reserved</p>
   </footer>
 
-  <script src="resources/default/script.js"> // Add this code to your existing script.js file
-    document.addEventListener('DOMContentLoaded', function() {
-        const loginForm = document.querySelector('form');
-        loginForm.onsubmit = function(event) {
-            // Basic validation can be done here or more advanced validation as needed
-        };
-    });
-    
-  </script>
+  <script src="resources/default/script.js"></script>
 </body>
 
 </html>

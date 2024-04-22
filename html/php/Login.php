@@ -2,10 +2,10 @@
 session_start(); // Start the session
 
 // Database configuration
-$host = '127.0.0.1:3308';
+$host = 'localhost';
 $dbname = 'rentmycar';
 $username = 'root'; // Replace with your database username
-$password = 'webdesign'; // Replace with your database password
+$password = ''; // Replace with your database password
 
 // Create a new PDO instance
 try {
@@ -25,20 +25,24 @@ try {
 
         if ($stmt->rowCount() == 1) {
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            // Verify password
-            if (password_verify($password, $user['PASSWORD'])) {
-                // Password is correct, so start a new session
-                $_SESSION['loggedin'] = true;
-                $_SESSION['username'] = $user['username']; // or user_id, depending on your system
-
-                // Redirect user to welcome page
-                header("location: welcome.html"); // Replace with the path to your welcome page
-            } else {
+           if ($password === $user['PASSWORD']) {
+    // Output JavaScript to the browser to set local storage
+    echo "<script>
+            localStorage.setItem('first_name', '" . $user['first_name'] . "');
+            localStorage.setItem('last_name', '" . $user['last_name'] . "');
+            localStorage.setItem('email', '" . $user['email'] . "');
+            localStorage.setItem('postcode', '" . $user['postcode'] . "');
+            localStorage.setItem('password', '" . $user['PASSWORD'] . "');
+                        localStorage.setItem('telephone', '" . $user['telephone'] . "');
+            window.location.href = '../profile.html';
+          </script>";
+    exit; // It's important to call exit after headers
+}else {
                 // Display an error message if password is not valid
                 echo "The password you entered was not valid.";
             }
         } else {
-            // Display an error message if username doesn't exist
+            // Display an error message if email doesn't exist
             echo "No account found with that email.";
         }
     }
