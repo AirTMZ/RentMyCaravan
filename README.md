@@ -8,5 +8,5 @@ Added a [project](https://github.com/users/AirTMZ/projects/1) in the projects ta
 Remember to create your own branch for each issue/feature!
 Fetch origin, push origin, and create merge requests!!!
 
-If you haven't worked with GitHub before, [this](https://www.google.com](https://www.youtube.com/watch?v=8Dd7KRpKeaE)https://www.youtube.com/watch?v=8Dd7KRpKeaE) video might be helpful
+If you haven't worked with GitHub before, [this](https://www.youtube.com/watch?v=8Dd7KRpKeaE) video might be helpful
 
