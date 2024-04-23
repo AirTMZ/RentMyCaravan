@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>List Caravan - RentMyCaravan</title>
+  <title>List caravan - RentMycaravan</title>
   <link rel="stylesheet" href="resources/default/styles.css" id="defaultStyle">
   <link rel="stylesheet" href="resources/jess/jessStyles.css" id="jessStyle">
   <link rel="stylesheet" href="resources/jess/darkStyles.css" id="darkStyle" disabled>
@@ -11,22 +11,19 @@
 
 <body>
   <header>
-    <div class="moon">
-      <img src="resources/default/moon.svg" alt="Toggle Dark Mode" id="imageButton" style="cursor: pointer;">
-    </div>
     <div class="container">
       <div class="navigation-bar">
         <div><a href="index.html" class="website-name">RentMyCaravan</a></div>
         <div class="nav-background"></div>
         <div class="nav-buttons">
           <div class="nav-button">
-            <a href="CaravanList.html" class="link-button">
+            <a href="caravanList.html" class="link-button">
               <div class="button-back"></div>
               <div class="button-label">List</div>
             </a>
           </div>
           <div class="nav-button">
-            <a href="AddCaravan.html" class="link-button">
+            <a href="Addcaravan.html" class="link-button">
               <div class="button-back"></div>
               <div class="button-label">Add</div>
             </a>
@@ -55,49 +52,8 @@
   </header>
 
   <main>
-    <!-- Vertical carousel section -->
-    <div class="container">
-      <div class="vertical-carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item">
-            <!-- Box 1 -->
-            <div class="box">
-
-              <img src="resources/jess/caravans 1.jpeg" alt="Image 1" class="box-image">
-              <div class="box-content">
-                <h2>£32,995</h2>
-                <p>2021 Buccaneer Bermuda / 4</p>
-            <div class="box-container">
-              <img src="resources/jess/caravans 1.jpeg" alt="Image 1" class="box-image">
-              <div class="box-content">
-                <p>Make: Buccaneer | Model: Bermuda | Internal Length: 6,390mm | Unladen Weight: 1,831kg | Berth: 4 |
-                  MTPLM: 1,990kg.</p>
-              </div>
-            </div>
-          </div>
-          <div class="column-item">
-            <!-- Box 2 -->
-            <div class="box">
-              <img src="resources/jess/caravan 2.jpeg" alt="Image 2" class="box-image">
-              <div class="box-content">
-                <h2>£17,500</h2>
-                <p>2015 Lunar Delta TI</p>
-                <p>Make: Lunar | Model: Delta | Internal Length: 6,340mm | Unladen Weight: 1,525kg | Berth: 4 | MTPLM: 1,685kg.</p>
-              <img src="resources/jess/caravan 2.jpeg" alt="Image 2" class="box-image">
-              <div class="box-content">
-              </div>
-            </div>
-          </div>
-          <div class="ccolumn-item">
-            <!-- Box 3 -->
-            <div class="box">
-              <img src="resources/jess/caravan 2.jpeg" alt="Image 3" class="box-image">
-              <div class="box-content">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="items-container">
+      <!-- Caravan items w ill be added here -->
     </div>
   </main>
 
@@ -106,6 +62,36 @@
   </footer>
 
   <script src="resources/default/script.js">
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Function to create a new caravan item
+      function createCaravanItem() {
+        const box = document.createElement('div');
+        box.className = 'box';
+        box.innerHTML = `
+      <img src="resources/jess/caravan1.jpeg" alt="Caravan Image" class="box-image">
+      <div class="box-content">
+        <h2 class="price">£32,995</h2>
+        <p class="make-model">2021 Buccaneer Bermuda</p>
+        <p class="additional-details">Year | Body Type | Fuel Type | Mileage | Door Num</p>
+      </div>
+      <img src="resources/tim/defaultProfile.png" alt="Profile Picture" class="profile-picture2">
+    `;
+        return box;
+      }
+
+      // Select the main tag and items-container
+      const mainTag = document.querySelector('main');
+      const itemsContainer = mainTag.querySelector('.items-container');
+
+      // Add 5 caravan items
+      for (let i = 0; i < 100; i++) {
+        itemsContainer.appendChild(createCaravanItem());
+      }
+    });
+
   </script>
 </body>
 
