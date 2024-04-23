@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="resources/default/styles.css" id="defaultStyle">
   <link rel="stylesheet" href="resources/jess/jessStyles.css" id="jessStyle">
   <link rel="stylesheet" href="resources/jess/darkStyles.css" id="darkStyle" disabled>
-<<<<<<< Updated upstream
-=======
   <script>
     //document.addEventListener('DOMContentLoaded', function () {
       // Check if user data does not exist in local storage
@@ -18,7 +16,15 @@
       //}
    //});
   </script>
->>>>>>> Stashed changes
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Check if user data does not exist in local storage
+      if (!localStorage.getItem('first_name') || !localStorage.getItem('email') || !localStorage.getItem('password')) {
+        // Redirect to login.html if user data is not found
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
 </head>
 
 <body>
@@ -107,9 +113,7 @@
     <p>&copy; RentMyCaravan 2024 - All rights reserved</p>
   </footer>
 
-  <script src="resources/default/settings.js">
-    //Add Script
-  </script>
+  <script src="resources/default/settings.js"></script>
 </body>
 
 </html>
