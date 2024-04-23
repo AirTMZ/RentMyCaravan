@@ -27,3 +27,21 @@ footer {
 }
 
 /*DO NOT REMOVE*/
+.settings-container {
+  background: #252525;
+  box-shadow: 0 4px 4px rgba(255, 255, 255, 0.1);
+}
+
+.delete-account-button {
+  background-color: #bd0900d6;
+  color: #fff;
+}
+
+.carousel-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.box {
+  background-color: #333333;
+  box-shadow: 0 4px 4px rgba(255, 255, 255, 0.1);
+}
