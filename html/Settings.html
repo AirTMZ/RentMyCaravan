@@ -8,6 +8,15 @@
   <link rel="stylesheet" href="resources/jess/jessStyles.css" id="jessStyle">
   <link rel="stylesheet" href="resources/jess/darkStyles.css" id="darkStyle" disabled>
   <script>
+    //document.addEventListener('DOMContentLoaded', function () {
+      // Check if user data does not exist in local storage
+      //if (!localStorage.getItem('first_name') || !localStorage.getItem('email') || !localStorage.getItem('password')) {
+        // Redirect to login.html if user data is not found
+        //window.location.href = 'login.html';
+      //}
+   //});
+  </script>
+  <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Check if user data does not exist in local storage
       if (!localStorage.getItem('first_name') || !localStorage.getItem('email') || !localStorage.getItem('password')) {
@@ -65,7 +74,6 @@
 
   <main>
     <div class="container settings-container">
-      <h2>Settings</h2>
       <form class="settings-form">
         <div>
           <label for="firstName">First Name:</label>
@@ -91,8 +99,13 @@
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" placeholder="Password" required>
         </div>
+        <button class="save-button">Save</button>
+        <div>
+        <button class="delete-account-button">Delete Account</button>
+        <div>
+        <button class="log-out-button">Log out</button>
+        </div>
       </form>
-      <button class="delete-account-button">Delete Account</button>
     </div>
   </main>
 
