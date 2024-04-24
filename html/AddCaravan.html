@@ -61,26 +61,29 @@
   </header>
 
   <main>
-    <div class="button-container">
-      <button class="btn center">Number Plate</button>
-      <div class="button-row">
-        <button class="btn">Make</button>
-        <button class="btn">Model</button>
+    <form action="create-caravan.php" method="post" id="caravanForm">
+      <div class="input-container">
+        <input type="text" id="number-plate" name="numberPlate" class="input center" placeholder="Number Plate" required>
+        <div class="input-row">
+            <input type="text" id="make" name="make" class="input" placeholder="Make" required>
+            <input type="text" id="model" name="model" class="input" placeholder="Model" required>
+        </div>
+        <div class="input-row">
+            <input type="text" id="body-type" name="bodyType" class="input" placeholder="Body Type" required>
+            <input type="text" id="fuel-type" name="fuelType" class="input" placeholder="Fuel Type" required>
+        </div>
+        <div class="input-row">
+            <input type="text" id="mileage" name="mileage" class="input" placeholder="Mileage" required>
+            <input type="text" id="location" name="location" class="input" placeholder="Location" required>
+        </div>
+        <div class="input-row">
+            <input type="text" id="production-year" name="productionYear" class="input" placeholder="Production Year" required>
+            <input type="text" id="door-num" name="doorNum" class="input" placeholder="Door Num" required>
+        </div>
+        <input type="text" id="media" name="media" class="input center" placeholder="Media" required>
+        <button type="submit" class="save-button">Add Caravan</button>
       </div>
-      <div class="button-row">
-        <button class="btn">Body Type</button>
-        <button class="btn">Fuel Type</button>
-      </div>
-      <div class="button-row">
-        <button class="btn">Mileage</button>
-        <button class="btn">Location</button>
-      </div>
-      <div class="button-row">
-        <button class="btn">Production Year</button>
-        <button class="btn">Door Num</button>
-      </div>
-      <button class="btn center">Media</button>
-    </div>
+    </form>
   </main>
 
   <footer class="website-text">
