@@ -128,3 +128,9 @@
   font-family: 'Ubuntu Light', sans-serif;
   font-size: 0.8em;
 }
+
+
+.button-container {
+  justify-content: center;
+  gap: 3%;
+}
