@@ -1,128 +1,150 @@
-body {
-  font-family: 'Ubuntu', sans-serif;
-  background-color: #fffafa;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+.settings-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
 }
 
-.settings-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-  }
+.settings-container h2 {
+  margin-bottom: 20px;
+}
 
-  .settings-container h2 {
-    margin-bottom: 20px;
-  }
+.settings-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  text-align: center;
+}
 
-  .settings-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-    text-align: center;
-  }
+.settings-form label {
+  font-weight: bold;
+}
 
-  .settings-form label {
-    font-weight: bold;
-  }
+.settings-form input[type="text"],
+.settings-form input[type="email"],
+.settings-form input[type="tel"],
+.settings-form input[type="password"] {
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+  border: none;
 
-  .settings-form input[type="text"],
-  .settings-form input[type="email"],
-  .settings-form input[type="tel"],
-  .settings-form input[type="password"] {
-    width: 100%;
-    height: 50%;
-    border-radius: 5px;
-    border: none;
-    margin: 0 5px;
-    
-  }
+}
 
-  .button-container{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 400px;
-    margin: 0;
-  }
+.delete-account-button {
+  background-color: #FF4136;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 0 auto;
+}
 
-  .delete-account-button {
-    background-color: #FF4136;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin: 0 5px;
-  }
+.save-button {
+  background-color: #0afd3b;
+  color: #f7f3f3;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 0 auto;
+}
 
-  .save-button {
-    background-color: #0afd3b;
-    color: #f7f3f3;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin: 0 5px;
-  }
+.log-out-button {
+  background-color: #8e8282;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 0 auto;
+}
 
-  .log-out-button{
-    background-color: #8e8282;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin: 0 5px;
-  }
+.profile-picture {
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  margin-right: 3%;
+}
 
-  .vertical-carousel {
-    overflow: auto;
-    height: 400px;
-    width: 100%; 
-  }
 
-  .carousel-inner {
-    display: block;
-    width: auto; 
-  }
 
-  .carousel-item {
-    padding: 20px;
-    border-bottom: 1px solid #ccc;
-  }
 
-  .box {
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    border-color: #8e8282;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-  }
+/* code for list caravan*/
+/* Main container styling */
+.items-container {
+  width: 90%;
+  margin: 20px auto;
+  padding: 0;
+  /* Removed padding to allow box to take full width */
+}
 
-  .box {
-    display: flex;
-    height: 250px;
-  }
+/* Box styling */
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  /* Drop shadow with 25% black color */
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  /* Box takes full width of its container */
+  position: relative;
+}
 
-  .box-image {
-    margin-right: 20px; 
-    width: auto; 
-    height: 250px; 
-  }
+/* Image styling */
+.box-image {
+  width: 33.33%;
+  /* Image takes up one-third of the box */
+  height: auto;
+  object-fit: cover;
+  margin-right: 2%;
+}
 
-  .profile-picture {
-    width: 10%;
-    height: 10%;
-    border-radius: 50%;
-    margin-right: 3%;
-  }
+/* Profile picture styling */
+.profile-picture2 {
+  border-radius: 50%;
+  width: 50px;
+  /* Fixed width for consistency */
+  height: 50px;
+  /* Fixed height for consistency */
+  margin-left: 2%;
+  /* Add margin to separate from content */
+  position: absolute;
+  /* Position the profile picture absolutely within the .box */
+  bottom: 20px;
+  /* Position from the bottom of the .box */
+  right: 20px;
+  /* Position from the right of the .box */
+}
 
-  
+/* Content styling */
+.box-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 1;
+  padding-left: 2%;
+  /* Add padding to separate from image */
+  align-items: flex-start;
+}
 
-  
+/* Price styling */
+.box-content h2 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  /* Add margin for spacing */
+}
+
+/* Make and model styling */
+.box-content p {
+  margin: 5px 0;
+}
+
+/* Additional details styling */
+.box-content .additional-details {
+  font-family: 'Ubuntu Light', sans-serif;
+  font-size: 0.8em;
+}

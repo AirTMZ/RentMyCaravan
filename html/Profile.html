@@ -53,20 +53,51 @@
 
   <main>
     <div class="profileBox">
-      <img src="resources/tim/defaultProfile.png" alt="Profile Picture" class="profile-pic">
-      <div class="text-box">First Name Last Name</div>
-      <div class="text-box">Email</div>
-      <div class="text-box">Phone Number</div>
+      <img src="" alt="Profile Picture" class="profile-pic">
+      <div class="text-box" id="firstNameLastName">First Name Last Name</div>
+      <div class="text-box" id="email">Email</div>
+      <div class="text-box" id="postCode">Post Code</div>
     </div>
+  </main>
 
 
-    <footer class="website-text">
-      <p>&copy; RentMyCaravan 2024 - All rights reserved</p>
-    </footer>
+  <footer class="website-text">
+    <p>&copy; RentMyCaravan 2024 - All rights reserved</p>
+  </footer>
 
-    <script src="resources/default/script.js">
-      //Add Script
-    </script>
+  <script src="resources/default/script.js">
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Function to capitalize the first letter of a string
+      function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+      }
+
+      // Retrieve data from local storage
+      var firstName = localStorage.getItem('first_name');
+      var lastName = localStorage.getItem('last_name');
+      var email = localStorage.getItem('email');
+      var postCode = localStorage.getItem('postcode');
+      var profileUrl = localStorage.getItem('profile_url'); // Retrieve the profile URL
+
+      // Capitalize the first letter of first and last names and make postcode uppercase
+      firstName = capitalizeFirstLetter(firstName);
+      lastName = capitalizeFirstLetter(lastName);
+      postCode = postCode.toUpperCase();
+
+      // Set the text content with the retrieved data
+      document.getElementById('firstNameLastName').textContent = firstName + ' ' + lastName;
+      document.getElementById('email').textContent = email;
+      document.getElementById('postCode').textContent = postCode;
+
+      // Set the src attribute of the profile picture with the retrieved profile URL
+      document.querySelector('.profile-pic').src = profileUrl;
+    });
+  </script>
+
+
+
 </body>
 
 </html>
