@@ -12,7 +12,7 @@ $sql = "SELECT vehicle_make, vehicle_model, vehicle_bodytype, fuel_type, mileage
 
 $result = $conn->query($sql);
 
-// Fetching Data
+// Fetching Caravan data from database
 if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {

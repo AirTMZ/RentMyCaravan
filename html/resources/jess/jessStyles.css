@@ -38,7 +38,16 @@ body {
     height: 50%;
     border-radius: 5px;
     border: none;
+    margin: 0 5px;
     
+  }
+
+  .button-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
   }
 
   .delete-account-button {
@@ -48,7 +57,7 @@ body {
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
-    margin: 0 auto;
+    margin: 0 5px;
   }
 
   .save-button {
@@ -58,7 +67,7 @@ body {
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
-    margin: 0 auto;
+    margin: 0 5px;
   }
 
   .log-out-button{
@@ -68,7 +77,7 @@ body {
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
-    margin: 0 auto;
+    margin: 0 5px;
   }
 
   .vertical-carousel {
