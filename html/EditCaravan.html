@@ -1,43 +1,92 @@
-<?php
-// Database credentials
-$host = 'localhost';
-$dbname = 'rentmycar';
-$username = 'root';
-$password = '';
+<!DOCTYPE html>
+<html lang="en">
 
-try {
-    // Create a new PDO connection object
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    // Set PDO to throw exceptions on errors
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+<head>
+  <meta charset="UTF-8">
+  <title>Add Caravan - RentMyCaravan</title>
+  <link rel="stylesheet" href="resources/default/styles.css" id="defaultStyle">
+  <link rel="stylesheet" href="resources/darkStyles.css" id="darkStyle" disabled>
+  <link rel="stylesheet" href="resources/craig/craigStyles.css" id="craigStyle"> <!-- External CSS file for form styling -->
+</head>
 
-    // Check if the form was submitted using POST
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // SQL query to update caravan details in the database
-        $sql = "UPDATE caravans SET make=?, model=?, bodyType=?, fuelType=?, mileage=?, location=?, productionYear=?, doorNum=?, media=? WHERE numberPlate=?";
-        
-        // Prepare the SQL statement for execution
-        $stmt = $conn->prepare($sql);
+<body>
+  <header>
+    <div class="container">
+      <div class="navigation-bar">
+        <div><a href="index.html" class="website-name">RentMyCaravan</a></div>
+        <div class="nav-background"></div>
+        <div class="nav-buttons">
+          <div class="nav-button">
+            <a href="CaravanList.html" class="link-button">
+              <div class="button-back"></div>
+              <div class="button-label">List</div>
+            </a>
+          </div>
+          <div class="nav-button">
+            <a href="AddCaravan.html" class="link-button">
+              <div class="button-back"></div>
+              <div class="button-label">Add</div>
+            </a>
+          </div>
+          <div class="nav-button">
+            <a href="AboutUs.html" class="link-button">
+              <div class="button-back"></div>
+              <div class="button-label">About Us</div>
+            </a>
+          </div>
+          <div class="nav-button">
+            <a href="Settings.html" class="link-button">
+              <div class="button-back"></div>
+              <div class="button-label">Settings</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="user-login-button">
+      <a href="Login.html">
+        <img src="resources/default/circle-user-round.svg" alt="User Login">
+      </a>
+    </div>
+  </header>
 
-        // Execute the prepared statement with the provided form values
-        $stmt->execute([
-            $_POST['make'],        // New make of the caravan
-            $_POST['model'],       // New model of the caravan
-            $_POST['bodyType'],    // New body type of the caravan
-            $_POST['fuelType'],    // New fuel type of the caravan
-            $_POST['mileage'],     // New mileage of the caravan
-            $_POST['location'],    // New location of the caravan
-            $_POST['productionYear'], // New production year of the caravan
-            $_POST['doorNum'],     // New number of doors on the caravan
-            $_POST['media'],       // New media or other information
-            $_POST['numberPlate']  // Number plate to identify which caravan to update
-        ]);
 
-        // Notify the user that the caravan has been updated successfully
-        echo "Caravan updated successfully.";
-    }
-} catch (PDOException $e) {
-    // If there is an error in the database connection or execution, terminate the script and display the error
-    die("Connection failed: " . $e->getMessage());
-}
-?>
+  <main>
+    <!-- Form to edit an existing caravan. Data will be sent to update-caravan.php to update the database -->
+    <form action="update-caravan.php" method="post" id="caravanForm">
+      <div class="input-container">
+        <!-- Each input field allows editing specific data about the caravan -->
+        <input type="text" id="number-plate" name="numberPlate" class="input center" placeholder="Number Plate" required>
+        <!-- Inputs for make and model which can be edited -->
+        <div class="input-row">
+            <input type="text" id="make" name="make" class="input" placeholder="Make" required>
+            <input type="text" id="model" name="model" class="input" placeholder="Model" required>
+        </div>
+        <!-- Inputs for body and fuel type which can be edited -->
+        <div class="input-row">
+            <input type="text" id="body-type" name="bodyType" class="input" placeholder="Body Type" required>
+            <input type="text" id="fuel-type" name="fuelType" class="input" placeholder="Fuel Type" required>
+        </div>
+        <!-- Inputs for mileage and location which can be edited -->
+        <div class="input-row">
+            <input type="text" id="mileage" name="mileage" class="input" placeholder="Mileage" required>
+            <input type="text" id="location" name="location" class="input" placeholder="Location" required>
+        </div>
+        <!-- Inputs for production year and door number which can be edited -->
+        <div class="input-row">
+            <input type="text" id="production-year" name="productionYear" class="input" placeholder="Production Year" required>
+            <input type="text" id="door-num" name="doorNum" class="input" placeholder="Door Num" required>
+        </div>
+        <input type="text" id="media" name="media" class="input center" placeholder="Media" required>
+        <button type="submit" class="save-button">Update Caravan</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; RentMyCaravan 2024 - All rights reserved</p>
+  </footer>
+
+  <script src="resources/default/script.js"></script>
+</body>
+</html>
