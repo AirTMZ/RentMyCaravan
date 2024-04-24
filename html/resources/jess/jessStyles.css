@@ -71,79 +71,59 @@
 
 
 /* code for list caravan*/
-/* Main container styling */
 .items-container {
   width: 90%;
   margin: 20px auto;
   padding: 0;
-  /* Removed padding to allow box to take full width */
 }
 
-/* Box styling */
 .box {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 5px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  /* Drop shadow with 25% black color */
   padding: 20px;
   margin-bottom: 20px;
   width: 100%;
-  /* Box takes full width of its container */
   position: relative;
 }
 
-/* Image styling */
 .box-image {
   width: 33.33%;
-  /* Image takes up one-third of the box */
   height: auto;
   object-fit: cover;
   margin-right: 2%;
 }
 
-/* Profile picture styling */
 .profile-picture2 {
   border-radius: 50%;
   width: 50px;
-  /* Fixed width for consistency */
   height: 50px;
-  /* Fixed height for consistency */
   margin-left: 2%;
-  /* Add margin to separate from content */
   position: absolute;
-  /* Position the profile picture absolutely within the .box */
   bottom: 20px;
-  /* Position from the bottom of the .box */
   right: 20px;
-  /* Position from the right of the .box */
 }
 
-/* Content styling */
 .box-content {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   flex-grow: 1;
   padding-left: 2%;
-  /* Add padding to separate from image */
   align-items: flex-start;
 }
 
-/* Price styling */
 .box-content h2 {
   font-weight: bold;
   margin-bottom: 10px;
-  /* Add margin for spacing */
 }
 
-/* Make and model styling */
 .box-content p {
   margin: 5px 0;
 }
 
-/* Additional details styling */
 .box-content .additional-details {
   font-family: 'Ubuntu Light', sans-serif;
   font-size: 0.8em;
