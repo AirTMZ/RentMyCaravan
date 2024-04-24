@@ -52,78 +52,26 @@
   </header>
 
   <main>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Edit Caravan - ListMyCaravan</title>
-  <link rel="stylesheet" href="resources/styles.css">
-  <link rel="stylesheet" href="resources/darkStyles.css" id="darkStyle" disabled>
-  <link rel="stylesheet" href="resources/craigStyles.css">  <!-- External CSS file for form styling -->
-</head>
-<body>
-  <header>
-    <div class="container">
-      <div class="navigation-bar">
-        <div><a href="index.html" class="website-name">ListMyCaravan</a></div>
-        <div class="nav-background"></div>
-        <div class="nav-buttons">
-          <div class="nav-button">
-            <a href="CaravanList.html" class="link-button">
-              <div class="button-back"></div>
-              <div class="button-label">List</div>
-            </a>
-          </div>
-          <div class="nav-button">
-            <a href="EditCaravan.html" class="link-button">
-              <div class="button-back"></div>
-              <div class="button-label">Edit</div>
-            </a>
-          </div>
-          <div class="nav-button">
-            <a href="AboutUs.html" class="link-button">
-              <div class="button-back"></div>
-              <div class="button-label">About Us</div>
-            </a>
-          </div>
-          <div class="nav-button">
-            <a href="Settings.html" class="link-button">
-              <div class="button-back"></div>
-              <div class="button-label">Settings</div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="user-login-button">
-      <a href="Login.html">
-        <img src="resources/circle-user-round.svg" alt="User Login">
-      </a>
-    </div>
-  </header>
-
-  <main>
-    <form action="update-caravan.php" method="post" id="caravanEditForm">
+    <form action="update-caravan.php" method="post" id="caravanForm">
       <div class="input-container">
-        <input type="text" id="number-plate" name="numberPlate" class="input center" placeholder="Enter Number Plate to Edit" required>
+        <input type="text" id="number-plate" name="numberPlate" class="input center" placeholder="Number Plate" required>
         <div class="input-row">
-            <input type="text" id="make" name="make" class="input" placeholder="Make">
-            <input type="text" id="model" name="model" class="input" placeholder="Model">
+            <input type="text" id="make" name="make" class="input" placeholder="Make" required>
+            <input type="text" id="model" name="model" class="input" placeholder="Model" required>
         </div>
         <div class="input-row">
-            <input type="text" id="body-type" name="bodyType" class="input" placeholder="Body Type">
-            <input type="text" id="fuel-type" name="fuelType" class="input" placeholder="Fuel Type">
+            <input type="text" id="body-type" name="bodyType" class="input" placeholder="Body Type" required>
+            <input type="text" id="fuel-type" name="fuelType" class="input" placeholder="Fuel Type" required>
         </div>
         <div class="input-row">
-            <input type="text" id="mileage" name="mileage" class="input" placeholder="Mileage">
-            <input type="text" id="location" name="location" class="input" placeholder="Location">
+            <input type="text" id="mileage" name="mileage" class="input" placeholder="Mileage" required>
+            <input type="text" id="location" name="location" class="input" placeholder="Location" required>
         </div>
         <div class="input-row">
-            <input type="text" id="production-year" name="productionYear" class="input" placeholder="Production Year">
-            <input type="text" id="door-num" name="doorNum" class="input" placeholder="Door Num">
+            <input type="text" id="production-year" name="productionYear" class="input" placeholder="Production Year" required>
+            <input type="text" id="door-num" name="doorNum" class="input" placeholder="Door Num" required>
         </div>
-        <input type="text" id="media" name="media" class="input center" placeholder="Media">
-        <input type="hidden" name="action" value="update">
+        <input type="text" id="media" name="media" class="input center" placeholder="Media" required>
         <button type="submit" class="save-button">Update Caravan</button>
       </div>
     </form>
