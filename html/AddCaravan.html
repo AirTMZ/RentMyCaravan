@@ -5,15 +5,8 @@
   <meta charset="UTF-8">
   <title>Add Caravan - RentMyCaravan</title>
   <link rel="stylesheet" href="resources/default/styles.css" id="defaultStyle">
-<<<<<<< Updated upstream
   <link rel="stylesheet" href="resources/craig/craigStyles.css" id="craigStyle">
   <link rel="stylesheet" href="resources/craig/darkStyles.css" id="darkStyle" disabled>
-=======
-  <link rel="stylesheet" href="resources/darkStyles.css" id="darkStyle" disabled>
-<<<<<<< Updated upstream
-  <link rel="stylesheet" href="resources/craig/craigStyles.css" id="craigStyle"> <!-- External CSS file for form styling -->
-=======
->>>>>>> Stashed changes
   <style>
     /* Styles specific to elements within the <main> section */
     main .input-container {
@@ -59,10 +52,6 @@
       /* Slightly darker green on hover */
     }
   </style>
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 </head>
 
 <body>
@@ -109,20 +98,10 @@
   <main>
     <!-- Form to add a new caravan. Data will be sent to manage-caravan.php for insertion into the database -->
     <form action="php/AddCaravan.php" method="post" id="caravanForm">
-      <input type="hidden" id="email" name="email">
-      <input type="hidden" id="password" name="password">
-
       <div class="input-container">
         <!-- Each input field collects specific data about the caravan -->
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-        <input type="text" id="number-plate" name="numberPlate" class="input center" placeholder="Number Plate" required>
-=======
         <input type="text" id="number-plate" name="numberPlate" class="input center" placeholder="Number Plate"
           required>
->>>>>>> Stashed changes
->>>>>>> Stashed changes
         <!-- Additional details for the caravan -->
         <div class="input-row">
           <input type="text" id="make" name="make" class="input" placeholder="Make" required>
@@ -156,12 +135,6 @@
   </footer>
 
   <script src="resources/default/script.js"></script>
-  <script>
-    document.getElementById('caravanForm').addEventListener('submit', function () {
-      document.getElementById('email').value = localStorage.getItem('email');
-      document.getElementById('password').value = localStorage.getItem('password');
-    });
-  </script>
 
 </body>
 
