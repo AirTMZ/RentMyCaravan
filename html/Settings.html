@@ -8,13 +8,11 @@
   <link rel="stylesheet" href="resources/jess/jessStyles.css" id="jessStyle">
   <link rel="stylesheet" href="resources/jess/darkStyles.css" id="darkStyle" disabled>
   <script>
-    //document.addEventListener('DOMContentLoaded', function () {
-    // Check if user data does not exist in local storage
-    //if (!localStorage.getItem('first_name') || !localStorage.getItem('email') || !localStorage.getItem('password')) {
-    // Redirect to login.html if user data is not found
-    //window.location.href = 'login.html';
-    //}
-    //});
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!localStorage.getItem('first_name') || !localStorage.getItem('email') || !localStorage.getItem('password')) {
+        window.location.href = 'login.html';
+      }
+    });
   </script>
 </head>
 

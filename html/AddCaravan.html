@@ -52,6 +52,13 @@
       /* Slightly darker green on hover */
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!localStorage.getItem('first_name') || !localStorage.getItem('email') || !localStorage.getItem('password')) {
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
 </head>
 
 <body>

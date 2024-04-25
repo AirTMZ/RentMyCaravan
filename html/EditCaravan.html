@@ -9,38 +9,55 @@
   <style>
     /* Styles specific to elements within the <main> section */
     main .input-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     main .input-row {
-        display: flex;
-        justify-content: center;
-        gap: 20px; /* Adjust gap size as needed */
-        margin-bottom: 10px; /* Spacing between rows */
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      /* Adjust gap size as needed */
+      margin-bottom: 10px;
+      /* Spacing between rows */
     }
 
     main .input {
-        padding: 10px 20px;
-        margin: 5px;
-        background-color: #93C572; /* Pistachio green background */
-        color: white; /* Text color */
-        border: none;
-        border-radius: 5px; /* Rounded corners */
-        cursor: text; /* Cursor to indicate text entry */
-        font-size: 16px; /* Font size similar to your button style */
-        width: calc(50% - 22px); /* Accounting for gap and margin, adjust accordingly */
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #93C572;
+      /* Pistachio green background */
+      color: white;
+      /* Text color */
+      border: none;
+      border-radius: 5px;
+      /* Rounded corners */
+      cursor: text;
+      /* Cursor to indicate text entry */
+      font-size: 16px;
+      /* Font size similar to your button style */
+      width: calc(50% - 22px);
+      /* Accounting for gap and margin, adjust accordingly */
     }
 
     main .input.full-width {
-        width: 100%; /* Full width for centered inputs */
+      width: 100%;
+      /* Full width for centered inputs */
     }
 
     main .input:hover {
-        background-color: #7DA453; /* Slightly darker green on hover */
+      background-color: #7DA453;
+      /* Slightly darker green on hover */
     }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!localStorage.getItem('first_name') || !localStorage.getItem('email') || !localStorage.getItem('password')) {
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
 </head>
 
 <body>
@@ -90,26 +107,28 @@
     <form action="update-caravan.php" method="post" id="caravanForm">
       <div class="input-container">
         <!-- Each input field allows editing specific data about the caravan -->
-        <input type="text" id="number-plate" name="numberPlate" class="input center" placeholder="Number Plate" required>
+        <input type="text" id="number-plate" name="numberPlate" class="input center" placeholder="Number Plate"
+          required>
         <!-- Inputs for make and model which can be edited -->
         <div class="input-row">
-            <input type="text" id="make" name="make" class="input" placeholder="Make" required>
-            <input type="text" id="model" name="model" class="input" placeholder="Model" required>
+          <input type="text" id="make" name="make" class="input" placeholder="Make" required>
+          <input type="text" id="model" name="model" class="input" placeholder="Model" required>
         </div>
         <!-- Inputs for body and fuel type which can be edited -->
         <div class="input-row">
-            <input type="text" id="body-type" name="bodyType" class="input" placeholder="Body Type" required>
-            <input type="text" id="fuel-type" name="fuelType" class="input" placeholder="Fuel Type" required>
+          <input type="text" id="body-type" name="bodyType" class="input" placeholder="Body Type" required>
+          <input type="text" id="fuel-type" name="fuelType" class="input" placeholder="Fuel Type" required>
         </div>
         <!-- Inputs for mileage and location which can be edited -->
         <div class="input-row">
-            <input type="text" id="mileage" name="mileage" class="input" placeholder="Mileage" required>
-            <input type="text" id="location" name="location" class="input" placeholder="Location" required>
+          <input type="text" id="mileage" name="mileage" class="input" placeholder="Mileage" required>
+          <input type="text" id="location" name="location" class="input" placeholder="Location" required>
         </div>
         <!-- Inputs for production year and door number which can be edited -->
         <div class="input-row">
-            <input type="text" id="production-year" name="productionYear" class="input" placeholder="Production Year" required>
-            <input type="text" id="door-num" name="doorNum" class="input" placeholder="Door Num" required>
+          <input type="text" id="production-year" name="productionYear" class="input" placeholder="Production Year"
+            required>
+          <input type="text" id="door-num" name="doorNum" class="input" placeholder="Door Num" required>
         </div>
         <input type="text" id="media" name="media" class="input center" placeholder="Media" required>
         <button type="submit" class="save-button">Update Caravan</button>
@@ -123,4 +142,5 @@
 
   <script src="resources/default/script.js"></script>
 </body>
+
 </html>

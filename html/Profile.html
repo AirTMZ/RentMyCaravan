@@ -7,6 +7,13 @@
   <link rel="stylesheet" href="resources/default/styles.css" id="defaultStyle">
   <link rel="stylesheet" href="resources/tim/timStyles.css" id="timStyle">
   <link rel="stylesheet" href="resources/tim/darkStyles.css" id="darkStyle" disabled>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!localStorage.getItem('first_name') || !localStorage.getItem('email') || !localStorage.getItem('password')) {
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
 </head>
 
 <body>

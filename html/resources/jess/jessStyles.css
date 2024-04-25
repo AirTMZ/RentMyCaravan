@@ -71,62 +71,45 @@
 
 
 /* code for list caravan*/
-.items-container {
-  width: 90%;
-  margin: 20px auto;
-  padding: 0;
+.vertical-carousel {
+  overflow: auto;
+  height: 400px;
+  width: 100%;
+}
+
+.carousel-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.carousel-item {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+
+.box {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .box {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 5px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 20px;
-  margin-bottom: 20px;
-  width: 100%;
-  position: relative;
+  height: 250px;
 }
 
 .box-image {
-  width: 33.33%;
-  height: auto;
-  object-fit: cover;
-  margin-right: 2%;
-}
-
-.profile-picture2 {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  margin-left: 2%;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+  margin-right: 20px;
+  width: auto;
+  height: 250px;
 }
 
 .box-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  flex-grow: 1;
-  padding-left: 2%;
-  align-items: flex-start;
-}
-
-.box-content h2 {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.box-content p {
-  margin: 5px 0;
-}
-
-.box-content .additional-details {
-  font-family: 'Ubuntu Light', sans-serif;
-  font-size: 0.8em;
+  flex: 1;
 }
 
 
@@ -137,8 +120,4 @@
 
 .settings-form {
   font-family: Ubuntu;
-}
-
-.settings-container {
-  background-color: #F6F1F1;
 }

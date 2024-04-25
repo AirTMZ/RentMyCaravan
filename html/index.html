@@ -15,8 +15,6 @@
       max-width: 100%;
     }
   </style>
-
-
 </head>
 
 <body>
@@ -111,26 +109,6 @@
             });
           }
           /*
-            for (let i = 0; i < 4; i++) {
-              const card = document.createElement('div');
-              card.className = 'card-card';
-              card.innerHTML = `
-            <div class="card-top-bar">
-              <img src="resources/caitlin/profile.png" class="profile-picture" alt="Profile Picture" />
-              <div class="make-model-location">
-                <p class="make-model">Make Model</p>
-                <p class="location">Location</p>
-              </div>
-              <img src="resources/caitlin/heart.svg" class="heart-icon" alt="Heart Icon" />
-            </div>
-            <img src="resources/caitlin/default.png" class="card-image" alt="Caravan Image" />
-            <div class="card-details">
-              <p class="car-details">Body Type | Fuel Type | Mileage | Door Num</p>
-            </div>
-            <div class="card-button">Year</div>
-          `;
-              cardContainer.appendChild(card);
-            }
             INSERT INTO vehicle_details (user_id, vehicle_make, vehicle_model, vehicle_bodytype, fuel_type, mileage, location, year, num_doors, image_url)
 VALUES (1, 'Ford', 'Fiesta', 'SUV', 'Diesel', '56051', 'Vancouver', '1999', 5, 'resources/caitlin/caravan.jpeg');
 
