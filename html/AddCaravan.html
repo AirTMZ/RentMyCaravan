@@ -6,7 +6,41 @@
   <title>Add Caravan - RentMyCaravan</title>
   <link rel="stylesheet" href="resources/default/styles.css" id="defaultStyle">
   <link rel="stylesheet" href="resources/darkStyles.css" id="darkStyle" disabled>
-  <link rel="stylesheet" href="resources/craig/craigStyles.css" id="craigStyle"> <!-- External CSS file for form styling -->
+  <style>
+    /* Styles specific to elements within the <main> section */
+    main .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main .input-row {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adjust gap size as needed */
+        margin-bottom: 10px; /* Spacing between rows */
+    }
+
+    main .input {
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #93C572; /* Pistachio green background */
+        color: white; /* Text color */
+        border: none;
+        border-radius: 5px; /* Rounded corners */
+        cursor: text; /* Cursor to indicate text entry */
+        font-size: 16px; /* Font size similar to your button style */
+        width: calc(50% - 22px); /* Accounting for gap and margin, adjust accordingly */
+    }
+
+    main .input.full-width {
+        width: 100%; /* Full width for centered inputs */
+    }
+
+    main .input:hover {
+        background-color: #7DA453; /* Slightly darker green on hover */
+    }
+  </style>
 </head>
 
 <body>
