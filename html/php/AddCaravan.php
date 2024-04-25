@@ -41,12 +41,23 @@ if ($user_id) {
             $_POST['doorNum'],     // Number of doors on the caravan
             $_POST['media']        // Media or additional info related to the caravan
         ]);
+<<<<<<< Updated upstream
 
 header('Location: /AddCaravan.html');
     } else {
 header('Location: /AddCaravan.html');
         }
       }
+=======
+<<<<<<< Updated upstream
+        
+=======
+
+>>>>>>> Stashed changes
+        // Notify user of successful addition
+        echo "New caravan added successfully.";
+    }
+>>>>>>> Stashed changes
 } catch (PDOException $e) {
     // If there is a PDO exception, terminate the script and display an error message
     die("Connection failed: " . $e->getMessage());
