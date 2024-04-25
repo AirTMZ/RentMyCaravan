@@ -1,0 +1,72 @@
+/*DO NOT REMOVE*/
+body {
+  background-color: #191414;
+}
+
+.nav-background {
+  background: #252525;
+  box-shadow: 0 4px 4px rgba(255, 255, 255, 0.1);
+}
+
+.button-back {
+  background: #333333;
+}
+
+.button-label {
+  color: #FFFFFF;
+}
+
+.website-name {
+  background-color: #556462;
+  box-shadow: 0 4px 4px rgba(255, 255, 255, 0.1);
+}
+
+main,
+footer {
+  color: #DDDDDD;
+}
+
+/*DO NOT REMOVE*/
+
+
+.container-login {
+  background-color: #252525;
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  color: #DDDDDD;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  background-color: #252525;
+  color: #DDDDDD;
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+button[type="submit"] {
+  background-color: #0fff97c7;
+  color: #FFFFFF;
+  box-shadow: inset 4px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+.card-card {
+  background-color: #556462;
+  box-shadow: 4px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.card-button {
+  background-color: #0fff97c7;
+  color: white;
+  box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.see-more-link {
+  color: white;
+}

@@ -1,0 +1,72 @@
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  /* Adjust gap size as needed */
+  margin-bottom: 10px;
+  /* Spacing between rows */
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn.center {
+  justify-self: center;
+}
+
+main .input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .input-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  /* Adjust gap size as needed */
+  margin-bottom: 10px;
+  /* Spacing between rows */
+}
+
+main .input {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #93C572;
+  /* Pistachio green background */
+  color: white;
+  /* Text color */
+  border: none;
+  border-radius: 5px;
+  /* Rounded corners */
+  cursor: text;
+  /* Cursor to indicate text entry */
+  font-size: 16px;
+  /* Font size similar to your button style */
+  width: calc(50% - 22px);
+  /* Accounting for gap and margin, adjust accordingly */
+}
+
+main .input.full-width {
+  width: 100%;
+  /* Full width for centered inputs */
+}
+
+main .input:hover {
+  background-color: #7DA453;
+  /* Slightly darker green on hover */
+}

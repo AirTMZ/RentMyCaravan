@@ -3,19 +3,27 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Settings - ListMyCaravan</title>
-  <link rel="stylesheet" href="resources/styles.css" id="defaultStyle">
-  <link rel="stylesheet" href="resources/darkStyles.css" id="darkStyle" disabled>
+  <title>Settings - RentMyCaravan</title>
+  <link rel="stylesheet" href="resources/default/styles.css" id="defaultStyle">
+  <link rel="stylesheet" href="resources/jess/jessStyles.css" id="jessStyle">
+  <link rel="stylesheet" href="resources/jess/darkStyles.css" id="darkStyle" disabled>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (!localStorage.getItem('first_name') || !localStorage.getItem('email') || !localStorage.getItem('password')) {
+        window.location.href = 'login.html';
+      }
+    });
+  </script>
 </head>
 
 <body>
   <header>
     <div class="moon">
-      <img src="resources/moon.svg" alt="Toggle Dark Mode" id="imageButton" style="cursor: pointer;">
+      <img src="resources/default/moon.svg" alt="Toggle Dark Mode" id="imageButton" style="cursor: pointer;">
     </div>
     <div class="container">
       <div class="navigation-bar">
-        <div><a href="index.html" class="website-name">ListMyCaravan</a></div>
+        <div><a href="index.html" class="website-name">RentMyCaravan</a></div>
         <div class="nav-background"></div>
         <div class="nav-buttons">
           <div class="nav-button">
@@ -47,22 +55,54 @@
     </div>
     <div class="user-login-button">
       <a href="Login.html">
-        <img src="resources/circle-user-round.svg" alt="User Login">
+        <img src="resources/default/circle-user-round.svg" alt="User Login">
       </a>
     </div>
 
   </header>
 
   <main>
+    <div class="container settings-container">
+      <form class="settings-form">
+        <div>
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+        </div>
+        <div>
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Email" required>
+        </div>
+        <div>
+          <label for="phoneNumber">Phone Number:</label>
+          <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone number" required>
+        </div>
+        <div>
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address" placeholder="Address" required>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+        </div>
+    </div>
+    <div class="button-container">
+      <button class="save-button">Save</button>
+      <button class="delete-account-button">Delete Account</button>
+      <button class="log-out-button">Log out</button>
+    </div>
+    </form>
+
   </main>
 
   <footer class="website-text">
-    <p>&copy; ListMyCaravan 2024 - All rights reserved</p>
+    <p>&copy; RentMyCaravan 2024 - All rights reserved</p>
   </footer>
 
-  <script src="resources/settings.js">
-    //Add Script
-  </script>
+  <script src="resources/default/settings.js"></script>
 </body>
 
 </html>

@@ -3,24 +3,88 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Sign Up - ListMyCaravan</title>
-  <link rel="stylesheet" href="resources/styles.css" id="defaultStyle">
-  <link rel="stylesheet" href="resources/darkStyles.css" id="darkStyle" disabled>
+  <title>Sign Up - RentMyCaravan</title>
+  <link rel="stylesheet" href="resources/caitlin/caitlinStyles.css" id="caitlinStyle">
+  <link rel="stylesheet" href="resources/caitlin/darkStyles.css" id="darkStyle" disabled>
+  <script>
+    // Check if user data exists in local storage
+    if (localStorage.getItem('first_name') && localStorage.getItem('email') && localStorage.getItem('password')) {
+      // Redirect to profile.html if user data is found
+      window.location.href = 'profile.html';
+    }
+  </script>
+
+  <style>
+    .container-login {
+      width: 65%;
+    }
+
+    input[type="email"],
+    input[type="text"] {
+      width: 94%;
+    }
+
+    button[type="submit"] {
+      width: 80%;
+    }
+  </style>
 </head>
 
 <body>
-  <header>
-  </header>
 
-  <main>
+  <main class="container-login">
+    <a href="index.html" style="text-decoration: none; color: #0fff95; font-size: 22px;">
+      <h1>ListMyCaravan</h1>
+    </a>
+    <p class="sign-in-text">Sign up to continue</p>
+
+    <form action="php/SignUp.php" method="post">
+      <div class="form-group name-group">
+        <input type="text" id="FirstName" name="firstName" placeholder="First Name" required>
+        <input type="text" id="LastName" name="lastName" placeholder="Last Name" required>
+      </div>
+
+      <div class="form-group">
+        <input type="email" id="Email" name="email" placeholder="Email" required>
+      </div>
+
+      <div class="form-group">
+        <input type="text" name="postCode" class="postCode" placeholder="Post Code" required>
+      </div>
+
+
+      <div class="form-group password-group">
+        <input type="password" id="Password" name="password" placeholder="Password" required>
+        <input type="password" id="RepeatPassword" name="repeatPassword" placeholder="Repeat Password" required>
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Sign Up</button>
+      </div>
+    </form>
+
+    <p class="register-text">Already have an account? <a href="Login.html"
+        style="text-decoration: none; color: #1be18b;">Sign In</a></p>
   </main>
 
   <footer class="website-text">
-    <p>&copy; ListMyCaravan 2024 - All rights reserved</p>
+    <p>&copy; RentMyCaravan 2024 - All rights reserved</p>
   </footer>
 
-  <script src="resources/script.js">
-    //Add Script
+  <script src="resources/default/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('form');
+      form.onsubmit = function (event) {
+        // Prevent form submission if passwords do not match
+        const password = document.getElementById('Password').value;
+        const repeatPassword = document.getElementById('RepeatPassword').value;
+        if (password !== repeatPassword) {
+          alert('Passwords do not match!');
+          event.preventDefault();
+        }
+      };
+    });
   </script>
 </body>
 

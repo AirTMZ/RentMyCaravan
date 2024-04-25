@@ -3,9 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Edit Caravan - RentMyCaravan</title>
+  <title>Add Caravan - RentMyCaravan</title>
   <link rel="stylesheet" href="resources/default/styles.css" id="defaultStyle">
-  <link rel="stylesheet" href="resources/darkStyles.css" id="darkStyle" disabled>
+  <link rel="stylesheet" href="resources/craig/craigStyles.css" id="craigStyle">
+  <link rel="stylesheet" href="resources/craig/darkStyles.css" id="darkStyle" disabled>
   <style>
     /* Styles specific to elements within the <main> section */
     main .input-container {
@@ -51,13 +52,6 @@
       /* Slightly darker green on hover */
     }
   </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      if (!localStorage.getItem('first_name') || !localStorage.getItem('email') || !localStorage.getItem('password')) {
-        window.location.href = 'login.html';
-      }
-    });
-  </script>
 </head>
 
 <body>
@@ -101,37 +95,38 @@
     </div>
   </header>
 
-
   <main>
-    <!-- Form to edit an existing caravan. Data will be sent to update-caravan.php to update the database -->
-    <form action="update-caravan.php" method="post" id="caravanForm">
+    <!-- Form to add a new caravan. Data will be sent to manage-caravan.php for insertion into the database -->
+    <form action="php/AddCaravan.php" method="post" id="caravanForm">
+      <input type="hidden" id="email" name="email">
+      <input type="hidden" id="password" name="password">
+
       <div class="input-container">
-        <!-- Each input field allows editing specific data about the caravan -->
-        <input type="text" id="number-plate" name="numberPlate" class="input center" placeholder="Number Plate"
-          required>
-        <!-- Inputs for make and model which can be edited -->
+        <!-- Each input field collects specific data about the caravan -->
+        <!-- Additional details for the caravan -->
         <div class="input-row">
           <input type="text" id="make" name="make" class="input" placeholder="Make" required>
           <input type="text" id="model" name="model" class="input" placeholder="Model" required>
         </div>
-        <!-- Inputs for body and fuel type which can be edited -->
+        <!-- Fuel and body type information -->
         <div class="input-row">
           <input type="text" id="body-type" name="bodyType" class="input" placeholder="Body Type" required>
           <input type="text" id="fuel-type" name="fuelType" class="input" placeholder="Fuel Type" required>
         </div>
-        <!-- Inputs for mileage and location which can be edited -->
+        <!-- Mileage and location inputs -->
         <div class="input-row">
           <input type="text" id="mileage" name="mileage" class="input" placeholder="Mileage" required>
           <input type="text" id="location" name="location" class="input" placeholder="Location" required>
         </div>
-        <!-- Inputs for production year and door number which can be edited -->
+        <!-- Production year and door number inputs -->
         <div class="input-row">
           <input type="text" id="production-year" name="productionYear" class="input" placeholder="Production Year"
             required>
           <input type="text" id="door-num" name="doorNum" class="input" placeholder="Door Num" required>
         </div>
         <input type="text" id="media" name="media" class="input center" placeholder="Media" required>
-        <button type="submit" class="save-button">Update Caravan</button>
+        <input type="hidden" name="action" value="create">
+        <button type="submit" class="save-button">Add Caravan</button>
       </div>
     </form>
   </main>
@@ -141,6 +136,13 @@
   </footer>
 
   <script src="resources/default/script.js"></script>
+  <script>
+    document.getElementById('caravanForm').addEventListener('submit', function () {
+      document.getElementById('email').value = localStorage.getItem('email');
+      document.getElementById('password').value = localStorage.getItem('password');
+    });
+  </script>
+
 </body>
 
 </html>
